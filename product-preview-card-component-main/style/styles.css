@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Fraunces', serif;
+  background-color: hsl(30, 38%, 92%);
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template: 1fr 4fr 1fr/ 1fr 2fr 1fr;
+}
+
+.container {
+  grid-area: 2/ 2/ 3/ 3;
+  display: grid;
+  grid-template: 1fr/ minmax(12rem, 300px) 1fr;
+}
+
+.image { 
+  grid-area: 1/ 1/ 2/ 2;
+  background-image: url(../images/image-product-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content {
+  grid-area: 1/ 2/ 2/ 3;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  padding: 1rem 1.5rem;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.content * {
+  background-color: white;
+}
+
+.preview {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .35rem;
+  font-size: .7rem;
+  font-weight: bold;
+  color: hsl(228, 12%, 58%);
+}
+
+.text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  color: hsl(228, 12%, 58%);
+  line-height: 1.3rem;
+}
+
+.price {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  color: hsl(158, 36%, 37%);
+  gap: .1rem 1rem;
+}
+
+.price .old-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: .7rem;
+  text-decoration: line-through;
+}
+
+button.cart {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: .7rem;
+  background-color: hsl(158, 36%, 37%);
+  color: white;
+  padding: .8rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: .8rem;
+  border-radius: .5rem;
+}
+
+button.cart:hover {
+  background-color: hsl(158, 36%, 47%);
+}
+
+button.cart img{
+  background-color: hsl(158, 36%, 37%);
+}
+
+@media(max-width: 426px) {
+  body {
+    display: flex;
+  }
+
+  .container {
+    display: grid;
+    grid-template: auto auto/ 1fr;
+    margin: 2rem 1rem;
+    
+  }
+
+  .image {
+    grid-area: 1/ 1/ 2/ 2;
+    background-image: url(../images/image-product-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .content {
+    grid-area: 2/ 1/ 3/ 2;
+    border-radius: 0 0 1rem 1rem;
+
+  }
+
+}
