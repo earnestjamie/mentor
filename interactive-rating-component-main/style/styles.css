@@ -16,7 +16,8 @@ body {
     2fr minmax(300px, 1.5fr) 2fr;
 }
 
-.container {
+.container
+, .result {
   grid-area: 2/ 2/ 3/ 3;
   display: flex;
   flex-flow: column wrap;
@@ -25,7 +26,12 @@ body {
   border-radius: 2rem;
 }
 
-.container > * {
+.result {
+  display: none;
+}
+
+.container > * 
+, .result > *{
   margin: .6rem 0;
 }
 
@@ -39,13 +45,36 @@ body {
   border-radius: 100%;
 }
 
-.container h2 {
+.result img {
+  object-fit: contain;
+}
+
+
+.container h2, .result h2 {
   font-size: 1.8rem;
   color: white;
 }
 
-.container p {
+.result h2 {
+  text-align: center;
+}
+
+.container p, .result p {
   color: hsl(216, 12%, 48%);
+}
+
+.result p {
+  text-align: center;
+}
+
+.result .result-score {
+  background-color: hsl(216, 12%, 24%);
+  width: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-self: center;
+  border-radius: 2rem;
+  color: hsl(25, 97%, 53%);
 }
 
 .container .score {
@@ -66,10 +95,11 @@ body {
 
 
 .container .score > button:hover {
-  background-color: hsl(216, 12%, 58%)!important;
+  background-color: hsl(216, 12%, 58%);
   border: 1px solid hsl(216, 12%, 58%)!important;
   color: white!important;
 } 
+
 
 .container > button {
   padding: .8rem 0;
