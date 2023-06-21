@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid rgb(195, 136, 136); */
+  font-family: 'Overpass', sans-serif;
+  transition: .5s;
+}
+
+body {
+  height: 100vh;
+  background-color: hsl(216, 12%, 8%);
+  display: grid;
+  grid-template: 
+    1fr auto 1fr/ 
+    2fr minmax(300px, 1.5fr) 2fr;
+}
+
+.container {
+  grid-area: 2/ 2/ 3/ 3;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1rem;
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 2rem;
+}
+
+.container > * {
+  margin: .6rem 0;
+}
+
+.container img {
+  background-color: hsl(216, 12%, 28%);
+  object-fit: contain;
+  align-self: flex-start;
+  padding: .7rem;
+  width: 2.5rem;
+  height: auto;
+  border-radius: 100%;
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.container p {
+  color: hsl(216, 12%, 48%);
+}
+
+.container .score {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container .score > button {
+  font-size: 1rem;
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 100%;
+  background-color: hsl(216, 12%, 28%);
+  border: 1px solid hsl(216, 12%, 28%);
+  color: hsl(216, 12%, 58%);
+  cursor: pointer;
+}
+
+
+.container .score > button:hover {
+  background-color: hsl(216, 12%, 58%)!important;
+  border: 1px solid hsl(216, 12%, 58%)!important;
+  color: white!important;
+} 
+
+.container > button {
+  padding: .8rem 0;
+  border-radius: 2rem;
+  font-size: 1rem;
+  background-color: hsl(25, 97%, 53%);
+  border: 1px solid hsl(25, 97%, 53%);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+
+}
+
+.container > button:hover {
+  color: hsl(25, 97%, 53%);
+  background-color: white;
+  border: 1px solid white;
+}
+
+
