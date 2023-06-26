@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
+  /* border: 1px solid rgb(198, 87, 87); */
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template: 
+    1fr minmax(min-content, 500px) 1fr/
+    1fr 400px minmax(min-content, 500px) 1fr;
+  background: linear-gradient(to bottom, hsl(273, 75%, 66%) 0%, hsl(240, 73%, 65%) 100%);
+}
+
+body > * {
+  background: white;
+}
+
+.img {
+  grid-area: 2/ 2/ 3/ 3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem 0 0 1rem;
+  margin-left: 1rem;
+}
+
+.img .box, .img .pattern, .img .woman {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  object-fit: cover;
+}
+
+.img .box {
+  z-index: 2;
+}
+
+.img .pattern {
+  width: 100%;
+}
+
+.img .woman {
+  z-index: 1;
+}
+
+.faq {
+  grid-area: 2/ 3/ 3/ 4;
+  padding: 4rem 2rem;
+  margin-right: 1rem;
+  border-radius: 0 1rem 1rem 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+
+.faq h1 {
+  font-size: 2.5rem;
+}
+
+.faq .question {
+  display: flex;
+  justify-content: space-between;
+  transition: .1s;
+}
+
+.faq .pane .question {
+  font-weight: 700;
+  padding: .5rem 0;
+}
+
+.faq .question::after {
+  content: url('../images/icon-arrow-down.svg');
+  padding-left: 1rem;
+}
+
+.faq .pane .question::after {
+  transform: scaleY(-1);
+  align-self: flex-start;
+}
+
+.faq .question:hover {
+  cursor: pointer;
+  color: hsl(14, 88%, 65%);
+}
+
+.faq .answer {
+  display: none;
+  font-size: .8rem;
+  color: hsl(238, 29%, 16%);
+  padding: .4rem 0;
+}
+
+.faq .pane .answer {
+  display: flex;
+}
+
+
+@media(max-width: 675px) {
+  body {
+    height: 1000px;
+    grid-template: 
+      1fr auto auto 1fr/
+      1fr 8fr 1fr;
+  }
+
+  .img {
+    grid-area: 2/ 2/ 3/ 3;
+    
+  }
+
+  .faq {
+    grid-area: 3/ 2/ 4/ 3;
+    padding-top: 130px;
+    border-radius: 1rem;
+    margin-right: 0;
+  }
+  
+  .faq .question {
+    padding-top: 1rem;
+  }
+
+  .img .woman {
+    width: 90%;
+  }
+
+  .img .pattern {
+    display: none;
+  }
+
+  .img .box {
+    width: 33%;
+  }
+}
+
