@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* border: 1px solid rgb(96, 91, 100); */
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+}
+
+
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template:
+    1fr max-content max-content 1fr/
+    1fr max-content 1fr;
+  background-color: hsl(0, 0%, 94%);
+}
+
+.data, .age {
+  background-color: white;
+  display: flex;
+  padding: 1rem;
+}
+
+.data {
+  border-radius: 1rem 1rem 0 0;
+  grid-area: 2/ 2/ 3/ 3;
+  color: hsl(0, 1%, 44%);
+}
+
+.data label {
+  text-transform: uppercase;
+  font-size: .35rem;
+  letter-spacing: .1rem;
+  padding-right: .8rem;
+}
+
+.data label.invalid {
+  color: hsl(0, 100%, 40%);
+}
+
+.data label input {
+  width: 3rem;
+  border-radius: .1rem;
+  border: 1px solid hsla(0, 1%, 44%, 40%);
+  font-size: .8rem;
+  margin-top: .1rem;
+  padding-left: .3rem;
+}
+
+.data label input.invalid {
+  border: 1px solid hsla(0, 100%, 40%, 40%);
+}
+
+.data label p {
+  visibility: hidden;
+  font-size: .3rem;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: hsl(0, 100%, 67%);
+  padding-top: .2rem;
+}
+
+
+
+.age {
+  border-radius: 0 0 5rem 1rem;
+  grid-area: 3/ 2/ 4 /3;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.age .line {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  position: relative;
+  border-top: 1px solid hsla(0, 1%, 44%, 40%);
+  
+}
+
+.age .line button {
+  cursor: pointer;
+  background-image: url('../assets/images/icon-arrow.svg');
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  padding: .5rem;
+  position: relative;
+  bottom: 1rem;
+  border: 1px solid hsla(0, 1%, 44%, 40%);
+}
+
+.age .line button:hover {
+  background-color: black;
+}
+
+.age > p::before {
+  content: '-- ';
+  color: hsl(259, 100%, 65%);
+}
+
+.age.calc > p::before {
+  content: attr(data-before);
+}
+
+.age > p::before, .age > p {
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: italic;
+}
+
+@media(max-width: 460px) {
+  .container {
+    display: grid;
+    grid-template:
+      1fr max-content max-content 1fr/
+      min-content;
+    background-color: hsl(0, 0%, 94%);
+  }
+
+  .data {
+    flex-wrap: wrap;
+  }
+
+  .age > p::before, .age > p {
+    font-size: 1rem;
+    
+  }
+}
