@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  
+}
+
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  position: fixed;
+  background-color: #be3144;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0 1rem;
+  justify-content: end;
+  line-height: 4rem;
+  column-gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+nav ul li a {
+  font-size: 1.5rem;
+}
+
+nav ul li:hover {
+  background-color: #45567d;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+main {
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+main h1 {
+  color: white;
+}
+
+main h3 {
+  color: red;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.info {
+  background-color: #45567d;
+  text-align: center;
+  padding: 4rem .5rem;
+  width: 100%;
+  
+}
+
+.info h1 {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+}
+
+
+.blocks {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1280px;
+  justify-content: center;
+}
+
+
+.blocks figure img{
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.blocks figure:hover {
+  cursor: pointer;
+}
+
+.blocks figure:hover figcaption::before, .blocks figure:hover figcaption::after {
+  transition: opacity .5s ease-in-out;
+  opacity: 1;
+}
+
+.blocks figcaption {
+  background-color: #3a3d40;
+  color: white;
+  font-size: 1.3rem;
+  position: relative;
+  top: -10px;
+}
+
+.blocks figcaption::before, .blocks figcaption::after {
+  opacity: 0;
+  color: red;
+}
+
+.blocks figcaption::before {
+  content: '< ';
+}
+
+.blocks figcaption::after {
+  content: ' />';
+}
+
+button {
+  font-size: 1.3rem;
+  color: white;
+  background-color: #3a3d40;
+  border: none;
+  border-radius: .1rem;
+  margin: auto;
+  margin-top: 4rem;
+  padding: .5rem 1rem;
+  transition: all .5s linear;
+}
+
+button::after {
+  content: ' >';
+  transition: all 1s linear;
+
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: red;
+  
+}
+
+button:hover::after {
+  margin-left: .5rem;
+}
+
+.contact {
+  background-color: #3a3d40;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.contact p {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.contact * {
+  color: white;
+  padding: 1rem;
+}
+
+.contact .links {
+  padding-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
