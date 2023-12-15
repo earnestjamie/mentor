@@ -1,0 +1,52 @@
+nav .burger {
+  display: none;
+}
+
+@media(max-width: 680px) {
+  body {
+    background-image: url('../assets/technology/background-technology-mobile.jpg');
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  nav .x-line {
+    display: none;
+  }
+
+  nav .burger {
+    display: unset;
+    color: lightblue;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  body > nav {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+  }
+
+  body > nav ul {
+    display: none;
+  }
+
+  body > nav ul.opened {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    right: 3rem;
+    row-gap: .5rem;
+  }
+
+  main {
+    flex-direction: column;
+    row-gap: 6rem;
+    min-height: 100vh;
+    margin-top: 7rem;
+  }
+
+  .left {
+    margin-top: 3rem;
+  }
+}
